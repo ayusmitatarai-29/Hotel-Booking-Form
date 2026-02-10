@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hotel Booking Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!----------Header------------->
+<header class="navbar">
+    <div class="logo">RoyalStay</div>
+    <ul class="nav-links" id="navLinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#rooms">Rooms</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="javascript:void(0)" onclick="openForm()">Book Now</a></li>
+</ul>
+<!-- Menu -->
+<div class="menu-icon" id="menuIcon">
+    <i class="fas fa-bars"></i>
+</div>
+
+</header>
+
+
+<!---------Hero section----------->
+<section class="hero" id="home">
+    <div class="hero-content">
+    <h1><b>Welcome to RoyalStay</b></h1>
+    <p><h3>Experience comfort, luxury, and unforgettable stays</h3></p>
+</div>
+</section>
+
+<!-----------About----------->
+<section class="about" id="about">
+    <h2>About Our Hotel</h2>
+    <p class="about-text">
+    At RoyalStay Hotel, we offer a perfect blend of luxury, comfort, and world-class hospitality.
+    Located in the heart of the city, our hotel is designed to give you a peaceful and memorable stay
+    with premium rooms, fine dining, and exceptional service.
+</p>
+<div class="features">
+    <div class="feature-box">🌟 Luxury Rooms</div>
+    <div class="feature-box">🍽️ Fine Dining</div>
+    <div class="feature-box">🏊 Swimming Pool</div>
+    <div class="feature-box">💆 Spa & Wellness</div>
+</div>
+</section>
+
+<section class="reviews">
+    <h2>What Our Guests Say</h2>
+    <div class="review-cards">
+    <div class="review">
+        <p>
+        “Amazing experience! The rooms were luxurious and the staff was extremely polite.”
+    </p>
+    <h4>— Milan Bastia</h4>
+    <span>⭐⭐⭐⭐⭐</span>
+    </div>
+
+    <div class="review">
+        <p>
+        “One of the best hotels I’ve ever stayed in. Highly recommended!”
+    </p>
+    <h4>— Ritanjali Behera</h4>
+    <span>⭐⭐⭐⭐⭐</span>
+    </div>
+
+    <div class="review">
+        <p>
+        “Beautiful interiors, great food, and very comfortable stay.”
+    </p>
+    <h4>— Aman Patel</h4>
+    <span>⭐⭐⭐⭐⭐</span>
+    </div>
+</div>
+</section>
+
+
+<!-------ROOMS---------------------->
+<section class="luxury-rooms" id="rooms">
+    <div class="rooms-heading">
+    <h2>Book Your Luxury Stay</h2>
+    <p>Choose from our premium rooms and suites designed for your comfort</p>
+</div>
+
+<section class="rooms">
+    <div class="room-card">
+    <img src="images/Delux room.jpeg" alt="Room">
+    <h3>Deluxe Room</h3>
+    <p>₹3500 / night</p>
+    <button onclick="openForm('Deluxe Room')">Book Now</button>
+
+</div>
+<div class="room-card">
+    <img src="images/luxury room.jpeg" alt="Room">
+    <h3>Luxury Suite</h3>
+    <p>₹6000 / night</p>
+    <button onclick="openForm('Luxury Room')">Book Now</button>
+
+</div>
+<div class="room-card">
+    <img src="images/Standard room.jpeg" alt="Room">
+    <h3>Standard Room</h3>
+    <p>₹2500 / night</p>
+    <button onclick="openForm('Standard Room')">Book Now</button>
+</div>
+<div class="room-card">
+    <img src="images/luxery suit room.jpeg" alt="Luxury Room">
+    <h3>Premium Luxury Room</h3>
+    <p>₹4500 / night</p>
+    <button onclick="openForm('Luxury Suite')">Book Now</button>
+
+</div>
+
+<div class="room-card">
+    <img src="images/royal suit room.jpeg" alt="Royal Suite">
+    <h3>Royal Suite</h3>
+    <p>₹8500 / night</p>
+    <button onclick="openForm('Royal Suite')">Book Now</button>
+</div>
+
+<div class="room-card">
+    <img src="images/executive room.jpeg" alt="Executive Suite">
+    <h3>Executive Suite</h3>
+    <p>₹7000 / night</p>
+    <button onclick="openForm('Executive Suite')">Book Now</button>
+</div>
+</section>
+
+<!-- Booking Form Modal -->
+<div class="modal" id="bookingModal">
+    <div class="modal-content">
+    <span class="close" onclick="closeForm()">&times;</span>
+    <h2>Book Your Stay</h2>
+
+    <form id="bookingForm">
+        <label>Room Type</label>
+        <select id="roomType" required>
+        <option value="">Select Room</option>
+        <option value="Deluxe Room">Deluxe Room</option>
+        <option value="Premium Luxury Room">Premium Luxury Room</option>
+        <option value="Standard Room">Standard Room</option>
+        <option value="Luxury Suite">Luxury Suite</option>
+        <option value="Royal Suite">Royal Suite</option>
+        <option value="Executive Suit">Presidential Suite</option>
+    </select>
+    <label>Check-in Date</label>
+    <input type="date" id="checkin" required>
+    <label>Check-out Date</label>
+    <input type="date" id="checkout" required>
+    <label>Guests</label>
+    <select id="guests" required>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+    </select>
+    <label>Email Address</label>
+    <input type="email" id="email" placeholder="example@gmail.com" required>
+    <label>Payment Method</label>
+    <select id="payment" required>
+    <option value="">Select Payment Method</option>
+    <option>UPI</option>
+    <option>Credit Card</option>
+    <option>Debit Card</option>
+    <option>Net Banking</option>
+    <option>Pay at Hotel</option>
+</select>
+
+    <label>Special Requests</label>
+    <textarea placeholder="Any special requests..."></textarea>
+    <button type="submit">Confirm Booking</button>
+    </form>
+</div>
+</div>
+
+<!-----------Footer---------->
+
+<footer class="footer" id="contact">
+    <div class="footer-container">
+
+    <div class="footer-about">
+        <h3>RoyalStay Hotel</h3>
+        <p>
+        Experience luxury, comfort, and world-class hospitality.
+        Your perfect stay begins with us.
+    </p>
+    </div>
+
+    <div class="footer-contact" id="Contact">
+        <h4>Contact</h4>
+        <p>📍 Bhubaneswar, Odisha</p>
+        <p>📞 +91 6370805242</p>
+        <p>✉️ info@royalstayhotel.com</p>
+    </div>
+
+    <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="#">Home</a>
+        <a href="#rooms">Rooms</a>
+        <a href="#">Contact</a>
+    </div>
+</div>
+<div class="footer-bottom">
+    <p>© 2026 RoyalStay Hotel. All Rights Reserved.</p>
+</div>
+</footer>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const modal = document.getElementById("bookingModal");
+        const bookingForm = document.getElementById("bookingForm");
+        const roomType = document.getElementById("roomType");
+        const checkin = document.getElementById("checkin");
+        const checkout = document.getElementById("checkout");
+        window.openForm = function (room = "") {
+    modal.style.display = "block";
+    if (room) {
+        roomType.value = room;
+    }
+};
+window.closeForm = function () {
+    modal.style.display = "none";
+};
+const today = new Date().toISOString().split("T")[0];
+checkin.min = today;
+checkin.addEventListener("change", function () {
+    checkout.min = this.value;
+    checkout.value = "";
+});
+
+bookingForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    if (new Date(checkout.value) <= new Date(checkin.value)) {
+        alert("Check-out date must be after check-in date.");
+        return;
+    }
+
+    alert("🎉 Booking confirmed successfully!");
+    bookingForm.reset();
+    closeForm();
+});
+window.addEventListener("click", function (e) {
+    if (e.target === modal) {
+        closeForm();
+    }
+});
+
+
+
+const menuIcon = document.getElementById("menuIcon");
+const navLinks = document.getElementById("navLinks");
+menuIcon.addEventListener("click", function () {
+    navLinks.classList.toggle("active");
+
+    const icon = menuIcon.querySelector("i");
+    if (navLinks.classList.contains("active")) {
+        icon.classList.remove("fa-bars");
+        icon.classList.add("fa-times");
+    } else {
+        icon.classList.remove("fa-times");
+        icon.classList.add("fa-bars");
+    }
+});
+navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        const icon = menuIcon.querySelector("i");
+        icon.classList.remove("fa-times");
+        icon.classList.add("fa-bars");
+    });
+});
+
+});
+</script>
+</body>
+</html>
